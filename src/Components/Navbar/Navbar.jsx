@@ -4,14 +4,19 @@ function Navbar({setShowModal}){
     return(
         <nav className="navbar">
             <div className="navLeft">
-                <h2 className="webTitle">KanFlow</h2>
+                <span className="icon">⬡</span>
+                <span className="webTitle">KanFlow</span>
             </div>
             <div className="navCenter">
-                <input className="search" type="text" placeholder="🔍Search tasks..." />
+                <div className="searchIcon">🔍</div>
+                <input className="search" type="text" placeholder="Search tasks..." />
             </div>
             <div className="navRight">
                 <button className="toggler">🌙</button>
-                <button className="addTask" onClick={() => setShowModal(true)}>+ New Task</button>
+                <button className="addTask" onClick={() => setShowModal(true)}>
+                <span className="addIcon">+</span>
+                <span className="addText">  New Task</span>
+                </button>
             </div>
         </nav>
     );

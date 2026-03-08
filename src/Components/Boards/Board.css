@@ -11,8 +11,17 @@
     /* padding: 20px; */
 }
 
-@media (max-width: 769px){
+@media (max-width: 900px){
+    .columns{
+        grid-template-columns: repeat(2,1fr);
+        justify-content: start;
+    }
+}
+@media (max-width: 680px){
     .board{
+        padding: 20px 14px 40px;
+    }
+    .columns{
         grid-template-columns: 1fr;
     }
 }
