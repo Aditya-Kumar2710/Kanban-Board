@@ -1,5 +1,5 @@
 import "./Board.css";
-import { DndContext } from "@dnd-kit/core";
+import { DndContext,useSensor,useSensors,PointerSensor,TouchSensor } from "@dnd-kit/core";
 import Column from "../Column/Column";
 
 function Board({tasks, setTasks}) {
@@ -19,8 +19,17 @@ function Board({tasks, setTasks}) {
         console.log(active.id);
         console.log(over.id);
     }
+    const sensors = useSensors(
+        useSensor(PointerSensor),
+        useSensor(TouchSensor,{
+        activationConstraint: {
+        delay: 200,
+        tolerance: 8,
+        },
+        })
+    );
     return (
-        <DndContext onDragEnd={handleDragEnd}>
+        <DndContext sensors = {sensors} onDragEnd={handleDragEnd}>
         <div className="board">
             <div className="columns">
             <Column title="Todo" status="todo" tasks={tasks} setTasks={setTasks} />
