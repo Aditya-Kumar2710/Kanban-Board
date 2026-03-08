@@ -1,0 +1,104 @@
+.overlay{
+    padding: auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(0, 0, 0,0.8);
+    backdrop-filter: blur(6px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.modal{
+    background-color: #161b22;
+    padding: 0 20px 20px 20px;
+    width: 400px;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;    
+}
+.modalHeader{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+    border-bottom: 2px solid rgb(48, 54, 61);
+}
+.closeBtn{
+    background: rgb(48, 54, 61) ;
+    border: none;
+    border-radius: 100%;
+    color: white;
+    font-size: 19px ;
+    cursor: pointer;
+}
+.modalBody{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.modalBody input{
+    padding: 9px;
+    border-radius: 10px;
+    border: 2px solid rgb(48, 54, 61);
+    background-color: rgb(13, 17, 23);
+    color: white;
+}
+.modalBody textarea{
+    min-height: 70px;
+    padding: 9px;
+    border-radius: 10px;
+    border: 2px solid rgb(48, 54, 61);
+    background-color: rgb(13, 17, 23);
+    color: white;
+}
+.priorityBtn{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 10px;
+}
+
+.priorityBtn button{
+    padding: 6px 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    background-color: rgb(33, 38, 45);
+    color: white;
+     border: 2px solid rgb(48, 54, 61);
+}
+.priorityBtn .active{
+    color: rgb(247, 168, 74); 
+    border-color: rgb(247, 168, 74);
+    background: color-mix(in srgb, rgb(247, 168, 74) 14%, transparent);
+}
+.modalFooter{
+    margin-top: 6px;
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 10px;
+    border-top: 2px solid rgb(48, 54, 61);
+    
+}
+.cancelBtn{
+    padding: 14px 12px;
+    border: none;
+    border-radius: 10px;
+    background-color:  rgb(48, 54, 61);
+    color: white;
+    cursor: pointer;
+    margin-top: 6px;
+}
+.createBtn{
+    padding: 8px 12px;
+    border: none;
+    border-radius: 10px;
+    background-color:  rgb(48, 54, 61);
+    color: white;
+    cursor: pointer;
+    margin-top: 6px;
+}
