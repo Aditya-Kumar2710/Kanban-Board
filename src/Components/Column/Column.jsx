@@ -2,10 +2,20 @@ import Taskcard from "../TaskCard/Taskcard";
 import { useDroppable } from "@dnd-kit/core";
 import "./Column.css";
 
-function Column({ title, status, tasks,setTasks }) {
-    const filteredTasks = tasks.filter(
-        (task) => task.status === status
-    );
+function Column({ title, status, tasks,setTasks,search }) {
+    const filteredTasks = tasks.filter((task) => {
+        
+        if (task.status !== status) return false;
+        if (!search) return true;
+        const text = search.toLowerCase();
+       return (
+        // task.status === status && 
+        // (
+            task.title.toLowerCase().includes(text) ||
+            task.description.toLowerCase().includes(text)
+        // )
+       );
+    });
     const {setNodeRef} = useDroppable({
         id: status
     });

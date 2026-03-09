@@ -39,8 +39,8 @@ function Taskcard({task,tasks,setTasks}) {
         return(
             <div className="editor">
                 <div className="editText">
-                <input className="editInp" value={title} onChange={handleTitle} />
-                <textarea className="editDesc" value={description} onChange={handleDescription} ></textarea>
+                <input className="editInp" placeholder="Edit Tile..." value={title} onChange={handleTitle} />
+                <textarea className="editDesc" placeholder="Edit Description..." value={description} onChange={handleDescription} ></textarea>
                 </div>
                 <div className="priorityBtn">
                         <button className= {`High ${priority ==="High" ? "highActive" : "" }`} value="High" onClick={handlePriority}>High</button>

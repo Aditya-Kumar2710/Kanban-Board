@@ -4,7 +4,7 @@ import Board from "./Components/Boards/Board";
 import AddTask from "./Components/AddTask/AddTask";
 function App() {
   const [showModal , setShowModal] = useState(false);
-
+  const [search,setSearch] = useState("");
   const [tasks,setTasks] = useState(() => {
     const savedTasks = localStorage.getItem("kanbanTasks");
     return savedTasks ? JSON.parse(savedTasks) : [];
@@ -16,8 +16,8 @@ function App() {
 
   return (
    <>
-   <Navbar setShowModal={setShowModal}/>
-   <Board tasks={tasks} setTasks={setTasks}/>
+   <Navbar setShowModal={setShowModal} setSearch={setSearch} search={search}/>
+   <Board tasks={tasks} setTasks={setTasks} search={search}/>
    {showModal && (<AddTask tasks={tasks} setTasks={setTasks} setShowModal={setShowModal}/>)}
    </>
   );

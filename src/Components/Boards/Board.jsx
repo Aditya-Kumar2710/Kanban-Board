@@ -2,7 +2,7 @@ import "./Board.css";
 import { DndContext,useSensor,useSensors,PointerSensor,TouchSensor } from "@dnd-kit/core";
 import Column from "../Column/Column";
 
-function Board({tasks, setTasks}) {
+function Board({tasks, setTasks,search}) {
     function handleDragEnd(event){
         const{active,over}=event;
         if(!over) return;
@@ -32,9 +32,9 @@ function Board({tasks, setTasks}) {
         <DndContext sensors = {sensors} onDragEnd={handleDragEnd}>
         <div className="board">
             <div className="columns">
-            <Column title="Todo" status="todo" tasks={tasks} setTasks={setTasks} />
-            <Column title="In Progress" status="inprogress" tasks={tasks} setTasks={setTasks} />
-            <Column title="Done" status="done" tasks={tasks} setTasks={setTasks} />
+            <Column title="Todo" status="todo" tasks={tasks} setTasks={setTasks} search={search} />
+            <Column title="In Progress" status="inprogress" tasks={tasks} setTasks={setTasks} search={search} />
+            <Column title="Done" status="done" tasks={tasks} setTasks={setTasks} search={search} />
             </div>
         </div>
         </DndContext>
