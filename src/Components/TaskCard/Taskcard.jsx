@@ -43,9 +43,9 @@ function Taskcard({task,tasks,setTasks}) {
                 <textarea className="editDesc" value={description} onChange={handleDescription} ></textarea>
                 </div>
                 <div className="priorityBtn">
-                        <button className={priority ==="High" ? "active" : "" } value="High" onClick={handlePriority}>High</button>
-                        <button className={priority ==="Medium" ? "active" : ""} value = "Medium" onClick={handlePriority}>Medium</button>
-                        <button className={priority ==="Low" ? "active" : "" } value="Low" onClick={handlePriority}>Low</button>
+                        <button className= {`High ${priority ==="High" ? "highActive" : "" }`} value="High" onClick={handlePriority}>High</button>
+                        <button className={`Medium ${priority ==="Medium" ? "medActive" : ""}`} value = "Medium" onClick={handlePriority}>Medium</button>
+                        <button className={`Low ${priority ==="Low" ? "lowActive" : "" }`} value="Low" onClick={handlePriority}>Low</button>
                 </div>
                 <div className="editBtn">
                 <button className="editSave" onClick={handleSave}>Save</button>
@@ -56,7 +56,7 @@ function Taskcard({task,tasks,setTasks}) {
     }
     return (
         <div className="taskCard" ref={setNodeRef} style={style} {...listeners} {...attributes} >
-            <div className="priority" >
+            <div className={priority === "High" ? "HP" : priority === "Medium" ? "MP" : "LP"} >
                {task.priority}
             </div>
             <h4 className="taskTitle">{task.title}</h4>

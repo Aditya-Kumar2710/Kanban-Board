@@ -7,27 +7,57 @@
     margin-top: 3px;
     margin-bottom: 10px;
     gap: 8px;
-    cursor: pointer;
+    cursor: grab;
     touch-action: none;
 }
-.priority{
-    background-color: rgb(232, 178, 2);
-    color: white;
-    font-size: 14px;
+.MP{
+    background: color-mix(in srgb, rgb(247, 168, 74) 14%, transparent);
+    color: rgb(247, 168, 74);     
+    font-size: 13px;
     font-weight: 600;
+    text-transform: uppercase;
     width: fit-content;
-    padding: 4px 8px;
+    padding: 3px 9px;
+    border: 1px solid color-mix(in srgb, rgb(247, 168, 74) 90%, transparent);;
     border-radius: 10px;
+    /* border-color: rgb(247, 168, 74); */
+}
+.HP{
+    color: rgb(255, 94, 122); 
+    background: color-mix(in srgb, rgb(255, 94, 122) 14%, transparent);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: fit-content;
+    padding: 3px 9px;
+    border: 1px solid color-mix(in srgb, rgb(255, 94, 122) 90%, transparent);;
+    border-radius: 10px;
+}
+.LP{
+    color:  rgb(74 247 163); 
+    background: color-mix(in srgb,  rgb(74 247 163) 14%, transparent);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: fit-content;
+    padding: 3px 9px;
+    border: 1px solid color-mix(in srgb,  rgb(74 247 163) 90%, transparent);;
+    border-radius: 10px;
+
 }
 .taskTitle{
     font-size: 20px ;
     font-weight: 600;
     margin:0 ;
+    word-break: break-word;
 }
 .description{
     font-size: 15px;
     color: rgb(139, 148, 158);
-
+    line-height: 1.5;
+    max-height: 68px;
+    word-break: break-word;
+    /* overflow: hidden; */
 }
 .footer{
     margin-top: 2px;

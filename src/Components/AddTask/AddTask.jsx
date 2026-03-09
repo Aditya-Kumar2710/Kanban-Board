@@ -43,9 +43,9 @@ function AddTask(props){
 
                     <label>Priority</label>
                     <div className="priorityBtn">
-                        <button className={priority ==="High" ? "active" : "" } value="High" onClick={handlePriority}>High</button>
-                        <button className={priority ==="Medium" ? "active" : ""} value = "Medium" onClick={handlePriority}>Medium</button>
-                        <button className={priority ==="Low" ? "active" : "" } value="Low" onClick={handlePriority}>Low</button>
+                        <button className={`High ${priority ==="High" ? "highActive" : "" }`} value="High" onClick={handlePriority}>High</button>
+                        <button className={`Medium ${priority ==="Medium" ? "medActive" : ""}`} value = "Medium" onClick={handlePriority}>Medium</button>
+                        <button className={`Low ${priority ==="Low" ? "lowActive" : "" }`} value="Low" onClick={handlePriority}>Low</button>
                     </div>
                 </div>
                 <div className="modalFooter">
