@@ -10,7 +10,7 @@
     background-color: rgba(15, 23, 42, 0.8);
     border-bottom: 1px solid rgb(51, 65, 85);
     backdrop-filter: blur(8px);
-    background-color: red;
+    
     /* flex-wrap: nowrap;
     min-width: 0; */
 }
