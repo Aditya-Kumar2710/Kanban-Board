@@ -15,7 +15,7 @@ function Navbar({setShowModal,setSearch,search,theme,setTheme}){
         <nav className="navbar">
             <div className="navLeft">
                 <span className="icon">⬡</span>
-                <span className="webTitle">KanFlow</span>
+                <span className="webTitle">TrackiFY</span>
             </div>
             <div className="navCenter">
                 <div className="searchIcon">🔍</div>
