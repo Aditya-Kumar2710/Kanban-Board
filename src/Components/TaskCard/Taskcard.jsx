@@ -34,6 +34,29 @@ function Taskcard({task,tasks,setTasks}) {
         const updatedTasks = tasks.filter((t)=>t.id !== task.id);
         setTasks(updatedTasks);
     }
+    function moveUp(){
+    const columnTasks = tasks.filter(t => t.status === task.status);    
+    const index = columnTasks.findIndex(t => t.id === task.id);
+    if(index === 0) return;
+    const prevTask = columnTasks[index - 1];
+    const newTasks = [...tasks];
+    const currentIndex = newTasks.findIndex(t => t.id === task.id);
+    const prevIndex = newTasks.findIndex(t => t.id === prevTask.id);
+    [newTasks[currentIndex], newTasks[prevIndex]] = [newTasks[prevIndex], newTasks[currentIndex]];
+    setTasks(newTasks);
+    }
+    function moveDown(){
+
+        const columnTasks = tasks.filter(t => t.status === task.status);        
+        const index = columnTasks.findIndex(t => t.id === task.id);        
+        if(index === columnTasks.length - 1) return;        
+        const nextTask = columnTasks[index + 1];        
+        const newTasks = [...tasks];        
+        const currentIndex = newTasks.findIndex(t => t.id === task.id);
+        const nextIndex = newTasks.findIndex(t => t.id === nextTask.id);        
+        [newTasks[currentIndex], newTasks[nextIndex]] = [newTasks[nextIndex], newTasks[currentIndex]];        
+        setTasks(newTasks);
+    }
     if(isEditing){
     
         return(
@@ -57,16 +80,22 @@ function Taskcard({task,tasks,setTasks}) {
     return (
         
         <div className="taskCard" ref={setNodeRef} style={style} {...listeners} {...attributes} >
-            <div className={priority === "High" ? "HP" : priority === "Medium" ? "MP" : "LP"} >
-               {task.priority}
+            <div className="topRow">
+                <div className={priority === "High" ? "HP" : priority === "Medium" ? "MP" : "LP"} >
+                    {task.priority}
+            </div>
+            <div className="moveBtns">
+                <button className="moveUp" onClick={moveUp} title="Move UP" onPointerDown={(event)=>event.stopPropagation()}>↑</button>
+                <button className="moveDown" onClick={moveDown} title="Move Down" onPointerDown={(event)=>event.stopPropagation()}>↓</button>
+            </div>
             </div>
             <h4 className="taskTitle">{task.title}</h4>
             <p className="description">{task.description}</p>
             <div className="footer">
                 <span className="date">{task.date}</span>
                 <div className="tool">
-                <button className="edit" onPointerDown={(event)=>event.stopPropagation()} onClick={() => setIsEditing(true)}>✏️</button>
-                <button className="delete" onPointerDown={(event)=>event.stopPropagation()} onClick={handleDelete}>🗑️</button>
+                <button className="edit" title="Edit" onPointerDown={(event)=>event.stopPropagation()} onClick={() => setIsEditing(true)}>✏️</button>
+                <button className="delete" title="Delete" onPointerDown={(event)=>event.stopPropagation()} onClick={handleDelete}>🗑️</button>
                 </div>
             </div>
         </div>

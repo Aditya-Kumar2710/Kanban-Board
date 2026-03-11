@@ -20,6 +20,33 @@
     transform: translateY(-3px);
     transition: transform .6s ease, background .5s ease;
 }
+.topRow{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.moveBtns{
+    display: flex;
+    gap: 12px;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+.moveUp,
+.moveDown{
+  background:none;
+  border:none;
+  cursor:pointer;
+  color: rgb(203, 213, 245);
+  font-size:15px;
+  padding:3px 10px;
+  border-radius:6px;
+  font-size: larger;
+}
+.moveUp:hover,
+.moveDown:hover{
+  background:rgb(71, 85, 105);
+}
 .MP{
     background: rgba(251,191,36,0.15);
     color:rgb(251, 191, 36);    
@@ -109,7 +136,7 @@
 .date{
     margin-top: 7px;
     font-size: 11px;
-    color: rgb(100, 116, 139);
+    color: rgb(131, 144, 161);
 }
 .tool{
     margin-top: 7px;
@@ -221,22 +248,30 @@ body.light .date{
 }
 body.light .edit:hover,
 body.light .delete:hover{
-    background:#b6bbc1;
+    background:rgb(182, 187, 193);
+}
+body.light .moveUp,
+body.light .moveDown{
+    color: rgb(125, 126, 127);
+}
+body.light .moveUp:hover,
+body.light .moveDown:hover{
+    background:rgb(182, 187, 193);
 }
 body.light .editor{
-    background:#f5f4f4;
-    border:1px solid #b7bbc0;
+    background:rgb(245, 244, 244);
+    border:1px solid rgb(183, 187, 192);
 }
 body.light .editInp,
 body.light .editDesc{
-    background:#edf1f2;
-    border:1px solid #85898f;
-    color:#0f172a;
+    background:rgb(237, 241, 242);
+    border:1px solid rgb(133, 137, 143);
+    color:rgb(15, 23, 42);
 }
 body.light .editcancle{
     background:rgb(221, 224, 226);
-    color:#475569;
+    color:rgb(71, 85, 105);
 }
 body.light .editcancle:hover{
-    background:#b0b1b2;
+    background:rgb(176, 177, 178);
 }
