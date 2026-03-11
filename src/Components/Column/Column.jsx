@@ -9,14 +9,11 @@ function Column({ title, status, tasks,setTasks,search }) {
         if (!search) return true;
         const text = search.toLowerCase();
        return (
-        // task.status === status && 
-        // (
             task.title.toLowerCase().includes(text) ||
             task.description.toLowerCase().includes(text)
-        // )
        );
     });
-    const {setNodeRef} = useDroppable({
+    const {setNodeRef, isOver} = useDroppable({
         id: status
     });
     return (
@@ -28,7 +25,7 @@ function Column({ title, status, tasks,setTasks,search }) {
 
         <div className="divider"></div>
 
-        <div className="container" ref={setNodeRef}>
+        <div className={`container ${isOver ? "dragOver" : ""}`} ref={setNodeRef}>
            { filteredTasks.map((task)=>(
             <Taskcard key={task.id} task={task} tasks={tasks} setTasks={setTasks}/>
            ))}

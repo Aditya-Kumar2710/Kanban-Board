@@ -12,6 +12,9 @@
     touch-action: none;
     position: relative;
 }
+.taskCard:active{
+    cursor: grabbing;
+}
 .taskCard:hover{
     background: rgb(63, 75, 99);
     transform: translateY(-3px);

@@ -1,8 +1,14 @@
+import { useState } from "react";
 import "./Board.css";
-import { DndContext,useSensor,useSensors,PointerSensor,TouchSensor } from "@dnd-kit/core";
+import { DndContext,DragOverlay,useSensor,useSensors,PointerSensor,TouchSensor } from "@dnd-kit/core";
 import Column from "../Column/Column";
-
+import Taskcard from "../TaskCard/Taskcard";
 function Board({tasks, setTasks,search}) {
+    const [activeTask, setActiveTask] = useState(null);
+    function handleDragStart(event){
+        const dragged = tasks.find(task => task.id === event.active.id);
+        setActiveTask(dragged);
+    }
     function handleDragEnd(event){
         const{active,over}=event;
         if(!over) return;
@@ -16,8 +22,9 @@ function Board({tasks, setTasks,search}) {
             return task;
         });
         setTasks(updatedTasks);
-        console.log(active.id);
-        console.log(over.id);
+        setActiveTask(null);
+        // console.log(active.id);
+        // console.log(over.id);
     }
     const sensors = useSensors(
         useSensor(PointerSensor),
@@ -29,13 +36,16 @@ function Board({tasks, setTasks,search}) {
         })
     );
     return (
-        <DndContext sensors = {sensors} onDragEnd={handleDragEnd}>
+        <DndContext sensors = {sensors} onDragStart={handleDragStart} onDragEnd={handleDragEnd}>
         <div className="board">
             <div className="columns">
             <Column title="Todo" status="todo" tasks={tasks} setTasks={setTasks} search={search} />
             <Column title="In Progress" status="inprogress" tasks={tasks} setTasks={setTasks} search={search} />
             <Column title="Done" status="done" tasks={tasks} setTasks={setTasks} search={search} />
             </div>
+            <DragOverlay>
+            {activeTask ? <Taskcard task={activeTask} /> : null}
+            </DragOverlay>
         </div>
         </DndContext>
     );

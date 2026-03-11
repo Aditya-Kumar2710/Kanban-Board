@@ -45,7 +45,7 @@
 }
 .searchIcon {
   position: absolute;
-  left: 1px;
+  left: 9px;
   top: 46%;
   transform: translateY(-50%);
   font-size: 13px;
@@ -57,7 +57,7 @@
     /* width: 350px; */
     /* z-index: 400; */
     width: 100%;
-    padding: 9px 48px 9px 20px;
+    padding: 9px 48px 9px 30px;
     border-radius: 20px;
     border: 1px solid rgb(51, 65, 85);
     background-color: rgb(30, 41, 59);
