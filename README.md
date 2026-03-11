@@ -3,8 +3,6 @@
 TrackiFY is a **Kanban-style task management web application** that helps users organize tasks visually using a board with different workflow stages.
 Users can create, edit, move, and manage tasks efficiently with a simple and intuitive interface.
 
-The project was built as part of a **club recruitment task** to demonstrate frontend development skills using **React, JavaScript, and modern UI practices**.
-
 ---
 
 ## Live Demo
