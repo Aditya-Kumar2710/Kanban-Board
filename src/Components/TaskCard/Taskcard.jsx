@@ -55,6 +55,7 @@ function Taskcard({task,tasks,setTasks}) {
         );
     }
     return (
+        
         <div className="taskCard" ref={setNodeRef} style={style} {...listeners} {...attributes} >
             <div className={priority === "High" ? "HP" : priority === "Medium" ? "MP" : "LP"} >
                {task.priority}

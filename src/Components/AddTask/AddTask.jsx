@@ -15,6 +15,10 @@ function AddTask(props){
         setPriority(event.target.value)
     }
     function handleCreteTask(){
+        if(title.trim() === ""){
+        alert("Task title is required");
+        return;
+        }
         const newTask = {
             id: Date.now(),
             title: title,

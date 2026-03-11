@@ -1,6 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 body{
   margin: 0;
-  background:rgb(11, 13, 20);
-  color: white;
-  font-family: 'DM Sans', sans-serif;
+  background:rgb(15, 23, 42);
+  color: rgb(226, 232, 240);
+  font-family: 'Inter', sans-serif;
+  transition: background 0.25s ease-in, color 0.25s ease-in;
+}
+body.light{
+  background:rgb(241, 245, 249);
+  color:rgb(15, 23, 42);
+}
+body, .navbar, .column, .taskCard, .modal{
+    transition: background 0.25s ease, color 0.25s ease, border-color 0.25s ease;
 }

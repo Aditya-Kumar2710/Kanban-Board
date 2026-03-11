@@ -5,35 +5,40 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgb(0, 0, 0,0.8);
+    background-color: rgba(15, 23, 42, 0.85);
     backdrop-filter: blur(6px);
     display: flex;
     justify-content: center;
     align-items: center;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-family:'Inter',sans-serif;
 }
 .modal{
-    background-color: rgb(22, 27, 34);
+    background-color: rgb(30, 41, 59);
+    border: 1px solid rgb(51, 65, 85);
     padding: 0 20px 20px 20px;
     width: 400px;
     border-radius: 16px;
     display: flex;
     flex-direction: column;
-    gap: 10px;    
+    gap: 10px; 
+    margin: 2%;   
 }
 .modalHeader{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 2px solid rgb(48, 54, 61);
+    border-bottom: 1px solid rgb(51, 65, 85);
 }
 .closeBtn{
-    background: rgb(48, 54, 61) ;
+    background: rgb(51, 65, 85);
     border: none;
     border-radius: 100%;
     color: white;
     font-size: 19px ;
     cursor: pointer;
+}
+.closeBtn:hover{
+    background:rgb(71, 85, 105);
 }
 .modalBody{
     display: flex;
@@ -44,18 +49,24 @@
 .modalBody input{
     padding: 9px;
     border-radius: 10px;
-    border: 2px solid rgb(48, 54, 61);
-    background-color: rgb(13, 17, 23);
+    background-color: rgb(15, 23, 42);
+    border: 1px solid rgb(51, 65, 85);
     color: white;
 }
 .modalBody textarea{
     min-height: 70px;
     padding: 9px;
     border-radius: 10px;
-    border: 2px solid rgb(48, 54, 61);
-    background-color: rgb(13, 17, 23);
+    background-color: rgb(15, 23, 42);
+    border: 1px solid rgb(51, 65, 85);
     color: white;
     resize: none;
+}
+.modalBody input:focus,.modalBody textarea:focus{
+    outline:none;
+    border-color:#6366f1;
+    box-shadow:0 0 0 2px rgba(99,102,241,0.25);
+    transition: all 0.5s ease;
 }
 .priorityBtn{
     display: grid;
@@ -67,71 +78,129 @@
     padding: 6px 12px;
     border-radius: 6px;
     cursor: pointer;
-    background-color: rgb(33, 38, 45);
+    background-color: rgb(51, 65, 85);
+    border: 1px solid rgb(71, 85, 105);
     color: white;
-     border: 2px solid rgb(48, 54, 61);
+}
+.priorityBtn button:hover{
+    transform: translateY(-2px);
+    transition: transform 0.3s ease;
 }
 .priorityBtn .High:hover{
     color: rgb(255, 94, 122); 
     border-color: rgb(255, 94, 122);
     background: color-mix(in srgb, rgb(255, 94, 122) 14%, transparent);
+    transition: all 0.3s linear;
 }
 .priorityBtn .highActive{
     color: rgb(255, 94, 122); 
     border-color: rgb(255, 94, 122);
     background: color-mix(in srgb, rgb(255, 94, 122) 14%, transparent);
+    transition: all 0.3s linear;
 }
 .priorityBtn .Medium:hover{
     color: rgb(247, 168, 74); 
     border-color: rgb(247, 168, 74);
     background: color-mix(in srgb, rgb(247, 168, 74) 14%, transparent);
+    transition: all 0.3s linear;
 }
 .priorityBtn .medActive{
     color: rgb(247, 168, 74); 
     border-color: rgb(247, 168, 74);
     background: color-mix(in srgb, rgb(247, 168, 74) 14%, transparent);
+    transition: all 0.3s linear;
 }
 .priorityBtn .Low:hover{
     color: rgb(74 247 163); 
     border-color: rgb(74 247 163);
     background: color-mix(in srgb, rgb(74 247 163) 14%, transparent);
+    transition: all 0.3s ease-in;
 }
 .priorityBtn .lowActive{
     color: rgb(74 247 163); 
     border-color: rgb(74 247 163);
     background: color-mix(in srgb, rgb(74 247 163) 14%, transparent);
+    transition: all 0.3s ease-in;
 }
 .modalFooter{
     margin-top: 6px;
     display: grid;
     grid-template-columns: repeat(2,1fr);
     gap: 10px;
-    border-top: 2px solid rgb(48, 54, 61);
-    
+    border-top: 1px solid rgb(51, 65, 85);    
 }
 .cancelBtn{
     padding: 14px 12px;
     border: none;
     border-radius: 10px;
-    background-color:  rgb(48, 54, 61);
+    background-color: rgb(51, 65, 85);
     color: white;
     cursor: pointer;
     margin-top: 6px;
+}
+.cancelBtn:hover{
+    transform: translateY(-2px);
+    background:rgb(71, 85, 105);
+    transition: all 0.3s ease;
 }
 .createBtn{
     padding: 8px 12px;
     border: none;
     border-radius: 10px;
-    background-color:  rgb(106, 78, 230);
+    background-color: rgb(99, 102, 241);
     color: white;
     cursor: pointer;
     margin-top: 6px;
 }
 .createBtn:hover{
     transform: translateY(-2px);
-    filter: drop-shadow(0px 0px 3px rgb(106, 78, 230));
+    filter: drop-shadow(0px 0px 3px rgb(99, 102, 241));
+    transition: all 0.3s ease;
 }
-.cancelBtn:hover{
-    transform: translateY(-2px);
-    filter: drop-shadow(0px 0px 3px rgb(48, 54, 61));
+body.light .overlay{
+    background-color: rgba(15,23,42,0.45);
+}
+body.light .modal{
+    background:#eaefef;
+    border:1px solid #2d2f30;
+}
+body.light .closeBtn{
+    background:rgb(241, 245, 249);
+    color:rgb(15, 23, 42);
+}
+body.light .closeBtn:hover{
+    background:rgb(208, 215, 224);
+}
+body.light .modalBody input,
+body.light .modalBody textarea{
+    background:rgb(237, 241, 242);
+    border:1px solid rgb(133, 137, 143);
+    color:rgb(15, 23, 42);
+}
+body.light .priorityBtn button{
+    background:rgb(237, 241, 242);
+    border:1px solid rgb(133, 137, 143);
+    color:#0f172a;
+}
+body.light .priorityBtn .highActive{
+    color: rgb(255, 94, 122);
+    border-color: rgb(255, 94, 122);
+    background: rgba(255, 94, 122,0.12);
+}
+body.light .priorityBtn .medActive{
+    color: rgb(247, 168, 74);
+    border-color: rgb(247, 168, 74);
+    background: rgba(247,168,74,0.12);
+}
+body.light .priorityBtn .lowActive{
+    color: rgb(74,247,163);
+    border-color: rgb(74,247,163);
+    background: rgba(74,247,163,0.12);
+}
+body.light .cancelBtn{
+    background:rgb(185, 188, 192);
+    color:rgb(39, 43, 48);
+}
+body.light .cancelBtn:hover{
+    background:rgb(213, 215, 218);
 }
