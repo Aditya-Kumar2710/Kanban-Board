@@ -15,6 +15,36 @@ https://github.com/Aditya-Kumar2710/Kanban-Board
 
 ---
 
+## Screenshots
+
+### Kanban Board
+
+<p align="center">
+    <img src="src\Components\TaskCard\Screenshots\Screenshot 2026-03-12 013726.png" width="48%">
+    <img src="src\Components\TaskCard\Screenshots\Screenshot 2026-03-12 013652.png" width="48%">
+</p>
+
+### Add New Task
+
+<p align="center">
+    <img src="src\Components\TaskCard\Screenshots\Screenshot 2026-03-12 013406.png" width="48%">
+    <img src="src\Components\TaskCard\Screenshots\Screenshot 2026-03-12 013340.png" width="48%">
+</p>
+
+### Edit Task
+
+<p align="center">
+    <img src="src\Components\TaskCard\Screenshots\image.png" width="48%">
+    <img src="src\Components\TaskCard\Screenshots\Screenshot 2026-03-12 013834.png" width="48%">
+</p>
+
+### Phone View
+
+<p align="center">
+    <img src="src\Components\TaskCard\Screenshots\Screenshot 2026-03-12 015423.png" width="48%">
+    <img src="src\Components\TaskCard\Screenshots\Screenshot 2026-03-12 021107.png" width="48%">
+</p>
+
 ## Features
 
 * Create new tasks with title, description, and priority
