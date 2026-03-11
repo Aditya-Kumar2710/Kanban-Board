@@ -1,16 +1,57 @@
-# React + Vite
+# TrackiFY – Kanban Task Management Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+TrackiFY is a **Kanban-style task management web application** that helps users organize tasks visually using a board with different workflow stages.
+Users can create, edit, move, and manage tasks efficiently with a simple and intuitive interface.
 
-Currently, two official plugins are available:
+The project was built as part of a **club recruitment task** to demonstrate frontend development skills using **React, JavaScript, and modern UI practices**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## Live Demo
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+🔗 **Deployed Website:**
+https://trackify-kanban.vercel.app/
 
-## Expanding the ESLint configuration
+🔗 **GitHub Repository:**
+https://github.com/Aditya-Kumar2710/Kanban-Board
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## Features
+
+* Create new tasks with title, description, and priority
+* Edit existing tasks
+* Delete tasks
+* Drag and drop tasks between columns
+* Move tasks up and down within a column
+* Search tasks by title or description
+* Dark and Light theme toggle
+* Responsive layout for desktop and mobile
+* Local storage persistence (tasks remain after refresh)
+
+---
+
+## Kanban Board Structure
+
+The board contains three workflow stages:
+
+* **Todo** – Tasks yet to be started
+* **In Progress** – Tasks currently being worked on
+* **Done** – Completed tasks
+
+Tasks can be moved between these columns using **drag and drop interactions**.
+
+---
+
+## Technologies Used
+
+* **React**
+* **JavaScript**
+* **HTML**
+* **CSS**
+* **Dnd-kit (Drag and Drop Library)**
+* **Vite**
+* **Vercel (Deployment)**
+
+---
+
